@@ -1,0 +1,90 @@
+<!--
+	此示例下载自 https://demo.runoops.com/echarts-website/examples/zh/editor.html?c=pie-simple&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOSD-qYN02gQHqDnnoDLWgJf6DK8oEPKgcHKB3boCFugfb9AhdGA_tUoAaIugDOAVwBGYMhViVJ02LgBmqygGMc0ZQCdKRAL5T0YYMCyQQBVMQwmIAcw84TVCMoBbc3QrIlxvaAATZ01gdyM9ADcfSH0AQywNVx09HODYUNkfCBwZAgBtTRdXWGg0gPw1AEF9QxkZWAAxE2Ag6xqwAE8QRsoQEqyakzTIiDkytQBWAAYAUknXSLSwNIrNVyRYRIy5RoAWAEYJWvrRwC59QGq4wFMFdkoC_prkI5PGgCYrm4NKiARHlAE-pgEYtQAKcm9Cp8vscsKcCBdFtc6kC1IAXRUAxbGARidAL6aMI-NUOCKRsAuAGY0bcqIBlo0AqjqALrlAKJpgGdFQDfPkT9sRST8CKjAaNAO16gFhNblw-H81Ho_CUQBuioA1uUoFh5AF1iegcAEQAALNIyCALaqffzagDKQ1wMUlsn1kWAAHcAEKI3wU5aamoye1OgDy2m0MhwYAAGgRPTzXD6Zk6AML2OJUEweBRpAAUntgWZzADpFgBKfKfVUlzSl2BqlAWADcQA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: '长治市秧歌群体参与目的统计图',
+    subtext: '',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      data: [
+        { value: 41, name: '强身健体' },
+        { value: 21, name: '休闲娱乐' },
+        { value: 15, name: '兴趣爱好' },
+        { value: 13, name: '拓展人际关系' },
+        { value: 5, name: '康复' },
+        { value:5,name:'其他'}
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
